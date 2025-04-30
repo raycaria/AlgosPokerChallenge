@@ -117,6 +117,7 @@ def main():
             revCard = input("Enter revealed cards: ")
             # if you bet first, will do so for entire game
             if betFirst: #if true
+                InitBet()
                 BetDecision()
                 OppBet()
             else: #if false 
@@ -126,10 +127,29 @@ def main():
             main()
             
         case 2:
-            # do stuff
+            # the turn, one card 
+            #enter revealed cards.
+            revCard = input("Enter revealed cards: ")
+
+            if betFirst: 
+                InitBet()
+                BetDecision()
+                OppBet()
+            else: 
+                OppBet()
+                BetDecision()
             main()
+
         case 3:
-            # do stuff
+            # the river, one final card 
+            revCard = input("Enter revealed cards:")
+            if betFirst: 
+                InitBet()
+                OppBet()
+                BetDecision()
+            else: 
+                OppBet()
+                BetDecision()
             main()
         case 4: 
             print("No one folded. Time for everyone to reveal their hands.\n")
